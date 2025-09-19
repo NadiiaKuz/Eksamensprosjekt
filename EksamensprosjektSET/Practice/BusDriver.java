@@ -3,6 +3,7 @@ public class BusDriver {
     public int age;
     public int routeID;
     public float meanness_scale;
+    private final int test = 42;
 
     public BusDriver(String name, int age, int routeID, float meanness_scale) {
         this.name = name;
