@@ -1,3 +1,8 @@
+package model;
+
+import enums.Role;
+import enums.UserType;
+
 import java.util.ArrayList;
 
 public class User {
