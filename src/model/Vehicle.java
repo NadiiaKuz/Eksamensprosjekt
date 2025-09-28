@@ -1,3 +1,7 @@
+package model;
+
+import enums.TransportType;
+
 public class Vehicle {
     private int transportId;
     private TransportType transportType;

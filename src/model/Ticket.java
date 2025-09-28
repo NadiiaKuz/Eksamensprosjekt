@@ -1,3 +1,7 @@
+package model;
+
+import enums.TicketType;
+
 import java.time.LocalDate;
 
 public class Ticket {
