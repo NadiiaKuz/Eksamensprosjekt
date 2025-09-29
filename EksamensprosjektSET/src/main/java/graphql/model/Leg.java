@@ -1,11 +1,16 @@
 package graphql.model;
 
-import org.springframework.data.annotation.Id;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public record Leg(
-        @Id
-        String mode,
-        Double distance,
-        Line line
-) {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
+public class Leg {
+        String mode;
+        Double distance;
+        Line line;
 }
