@@ -1,4 +1,4 @@
-package graphql.model;
+package graphql.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package graphql.model;
+package graphql.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-public class Place {
-        String place;
+public class Leg {
+        String mode;
+        Double distance;
+        Line line;
 }
