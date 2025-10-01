@@ -3,6 +3,7 @@ package graphql.query;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GraphQLQuery {
@@ -21,16 +22,55 @@ public class GraphQLQuery {
 
     public String getQuery(int fromStop, int toStop) {
         //Define the GraphQL query
-        String graphQLQuery = String.format("{\n" +
-                "  trip(\n" +
-                "    from: {place:\"NSR:StopPlace:%d\"}\n" +
-                "    to: {place:\"NSR:StopPlace:%d\"}\n" +
-                "    dateTime: \"2025-09-29T22:57:52.579+02:00\"\n" +
-                "    arriveBy: false\n" +
-                "  ) {\n" +
-                "    dateTime\n" +
-                "  }\n" +
-                "}", fromStop, toStop);
+        String graphQLQuery = String.format("""
+                  {
+                  trip(
+                    from: {place:"NSR:StopPlace:%d"}
+                    to: {place:"NSR:StopPlace:%d"}
+                    arriveBy: false
+                  ) {
+                    tripPatterns {
+                      expectedStartTime
+                      expectedEndTime
+                      duration
+                      legs {
+                        mode
+                        distance
+                        line {
+                          id
+                          publicCode
+                        }
+                      }
+                    }
+                  }
+                }""", fromStop, toStop);
+        return returnJsonQuery(graphQLQuery);
+    }
+
+    public String getQuery(int fromStop, int toStop, String dateTime) {
+        String graphQLQuery = String.format("""
+                  {
+                  trip(
+                    from: {place:"NSR:StopPlace:%d"}
+                    to: {place:"NSR:StopPlace:%d"}
+                    dateTime: "%s"
+                    arriveBy: false
+                  ) {
+                    tripPatterns {
+                      expectedStartTime
+                      expectedEndTime
+                      duration
+                      legs {
+                        mode
+                        distance
+                        line {
+                          id
+                          publicCode
+                        }
+                      }
+                    }
+                  }
+                }""", fromStop, toStop, dateTime);
         return returnJsonQuery(graphQLQuery);
     }
 }
