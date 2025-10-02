@@ -2,10 +2,9 @@ package graphql.query;
 
 import com.google.gson.Gson;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.time.OffsetDateTime;
 
 public class GraphQLQuery {
@@ -39,13 +38,17 @@ public class GraphQLQuery {
                         mode
                         distance
                         line {
-                          id
                           publicCode
+                          transportMode
+                          operator {
+                            id
+                          }
                         }
                       }
                     }
                   }
-                }""", fromStop, toStop);
+                }
+                """, fromStop, toStop);
         return returnJsonQuery(graphQLQuery);
     }
 
@@ -58,21 +61,25 @@ public class GraphQLQuery {
                     dateTime: "%s"
                     arriveBy: false
                   ) {
-                    tripPatterns {
-                      expectedStartTime
-                      expectedEndTime
-                      duration
-                      legs {
-                        mode
-                        distance
-                        line {
-                          id
-                          publicCode
-                        }
-                      }
-                    }
-                  }
-                }""", fromStop, toStop, dateTime);
+                     tripPatterns {
+                       expectedStartTime
+                       expectedEndTime
+                       duration
+                       legs {
+                         mode
+                         distance
+                         line {
+                           publicCode
+                           transportMode
+                           operator {
+                             id
+                           }
+                         }
+                       }
+                     }
+                   }
+                 }
+                """, fromStop, toStop, dateTime);
         return returnJsonQuery(graphQLQuery);
     }
 
@@ -94,8 +101,11 @@ public class GraphQLQuery {
                         mode
                         distance
                         line {
-                          id
                           publicCode
+                          transportMode
+                          operator {
+                            id
+                          }
                         }
                       }
                     }
@@ -106,7 +116,9 @@ public class GraphQLQuery {
         return returnJsonQuery(graphQLQuery);
     }
 
-    public String getQuery(int fromStop, int toStop, String dateTime, String transportMode) {
+    public String getQuery(int fromStop, int toStop, OffsetDateTime dateTime, String transportMode) {
+        String timeString = dateTime.toString();
+
         String graphQLQuery = String.format("""
                 {
                   trip(
@@ -124,14 +136,17 @@ public class GraphQLQuery {
                         mode
                         distance
                         line {
-                          id
                           publicCode
+                          transportMode
+                          operator {
+                            id
+                          }
                         }
                       }
                     }
                   }
                 }
-                """, fromStop, toStop, dateTime, transportMode);
+                """, fromStop, toStop, timeString, transportMode);
 
         return returnJsonQuery(graphQLQuery);
     }

@@ -17,8 +17,7 @@ public class GraphQLRequestApplication {
         //String response = client.sendGraphQLRequest(query.getQuery(2306,2534, "2025-10-02T13:22:56.428+02:00", "bus"));
 
         OffsetDateTime currentTime = OffsetDateTime.now();
-        String currentTimeString = currentTime.toString();
-        String response = client.sendGraphQLRequest(query.getQuery(2306, 2534, currentTimeString,"bus"));
+        String response = client.sendGraphQLRequest(query.getQuery(2306, 2534, currentTime,"bus"));
 
         System.out.println(response);
     }
