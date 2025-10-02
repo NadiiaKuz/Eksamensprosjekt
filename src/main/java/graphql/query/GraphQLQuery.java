@@ -5,6 +5,8 @@ import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
+import java.time.OffsetDateTime;
 
 public class GraphQLQuery {
 
@@ -47,7 +49,7 @@ public class GraphQLQuery {
         return returnJsonQuery(graphQLQuery);
     }
 
-    public String getQuery(int fromStop, int toStop, String dateTime) {
+    public String getQuery(int fromStop, int toStop, OffsetDateTime dateTime) {
         String graphQLQuery = String.format("""
                   {
                   trip(
@@ -71,6 +73,66 @@ public class GraphQLQuery {
                     }
                   }
                 }""", fromStop, toStop, dateTime);
+        return returnJsonQuery(graphQLQuery);
+    }
+
+    public String getQuery(int fromStop, int toStop, String transportMode) {
+        String graphQLQuery = String.format("""
+                {
+                  trip(
+                    from: {place: "NSR:StopPlace:%d"}
+                    to: {place: "NSR:StopPlace:%d"}
+                    dateTime: "2025-09-29T07:57:52.579+02:00"
+                    arriveBy: false
+                    modes: {transportModes: {%s}}
+                  ) {
+                    tripPatterns {
+                      expectedStartTime
+                      expectedEndTime
+                      duration
+                      legs {
+                        mode
+                        distance
+                        line {
+                          id
+                          publicCode
+                        }
+                      }
+                    }
+                  }
+                }
+                """, fromStop, toStop, transportMode);
+
+        return returnJsonQuery(graphQLQuery);
+    }
+
+    public String getQuery(int fromStop, int toStop, String dateTime, String transportMode) {
+        String graphQLQuery = String.format("""
+                {
+                  trip(
+                    from: {place: "NSR:StopPlace:%d"}
+                    to: {place: "NSR:StopPlace:%d"}
+                    dateTime: "%s"
+                    arriveBy: false
+                    modes: {transportModes: {transportMode: %s}}
+                  ) {
+                    tripPatterns {
+                      expectedStartTime
+                      expectedEndTime
+                      duration
+                      legs {
+                        mode
+                        distance
+                        line {
+                          id
+                          publicCode
+                        }
+                      }
+                    }
+                  }
+                }
+                """, fromStop, toStop, dateTime, transportMode);
+
         return returnJsonQuery(graphQLQuery);
     }
 }
