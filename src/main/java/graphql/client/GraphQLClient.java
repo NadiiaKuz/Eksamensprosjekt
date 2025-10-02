@@ -14,6 +14,7 @@ public class GraphQLClient {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(BASE_URI))
                 .header("Content-Type", "application/json")
+                .header("ET-Client-Name", "HiØ-exam-project")
                 .POST(HttpRequest.BodyPublishers.ofString(queryJson))
                 .build();
 
