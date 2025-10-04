@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+
+        <label for="name">Navn: </label>
+        <input type="text" id="name" required>
+
+        <label for="mail">E-postadresse: </label>
+        <input type="email" id="mail" required>
+
+        <label for="userType">Velg reisende: </label>
+        <select name="reisende" id="userType" required>
+            <option value="">-</option>
+            <option value="CHILD">Barn</option>
+            <option value="STUDENT">Student</option>
+            <option value="ADULT">Voksen</option>
+            <option value="SENIOR">Honnør</option>
+        </select>
+
+        <label for="password">Passord</label>
+        <input type="text" id="password" required>
+
+        <label for="vilkaar">
+            <input type="checkbox" id="vilkaar" required>
+            Ja, jeg godtar vilkårene.
+        </label>
+    </form>
+</body>
+</html>
