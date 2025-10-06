@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Font Awesome -->
+    <link href="ikoner/css/fontawesome.css" rel="stylesheet"> 
+    <link href="ikoner/css/brands.css" rel="stylesheet">
+    <link href="ikoner/css/solid.css" rel="stylesheet">
+    <link href="ikoner/css/regular.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <a id="logo" href="index.html"><img src="pics/logo.png" alt=""></a>
+            <p>- Reise gjort enkelt</p>
+            <a id="account" href="create-user.html"><i class="fa-solid fa-user"></i></a>
+        </header>
+
+        <main>
+            <h1>Hvor ønsker du å reise?</h1>
+
+            <form action="" method="get">
+                <label for="start">Fra: 
+                <input type="text" id="start" placeholder="Hvor ønsker du å reise fra?">
+                </label>
+                <label for="end">Til: 
+                <input type="text" id="end" placeholder="Hvor ønsker du å reise til?">
+                </label>
+                <input id="search" type="submit" value="Finn Reise">
+            </form>
+        </main>
+
+        <section id="search-results">
+            <h2>Søkeresultat</h2>
+            <article class="result">
+                <p>Her skal det kalles på treffene som matcher søk</p>
+            </article>
+            <article class="result">
+                <p>Her skal det kalles på treffene som matcher søk</p>
+            </article>
+            <article class="result">
+                <p>Her skal det kalles på treffene som matcher søk</p>
+            </article>
+            <article class="result">
+                <p>Her skal det kalles på treffene som matcher søk</p>
+            </article>
+        </section>
+
+        <footer id="global-footer">   
+            <section id="footer-ingress">
+                <img src="pics/logo.png" alt="" width="65"> 
+                <p >At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
+            </section>
+            <section id="footer-kontakt">
+                <h4 id="kontaktOss">KONTAKT</h4>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i><span>Adresse:</span>B R A Veien 4, 1757 Halden</li>
+                    <li><i class="fa-solid fa-phone"></i><span>Telefon:</span><a href="tel:+469608000">(+47) 69 60 80 00</a></li>
+                    <li><i class="fa-solid fa-envelope"></i><span>E-post:</span> <a href="mailto:halden@hiof.no">halden@hiof.no</a></li>
+                    <li><i class="fa-solid fa-clock"></i><p><span>Åpningstider:</span> Stenger 15:00</p></li>
+                </ul>
+            </section>
+            <section>
+                <nav id="footer-snarveier">
+                    <h4>SNARVEIER</h4>
+                    <ul>
+                        <li><a href="#">Produkter</a></li>
+                        <li><a href="#">Kategorier</a></li>
+                        <li><a href="#">Kontakt oss</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section id="footer-sosialemedier">
+                <h4>SOSIALE MEDIER</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/" target="_blank" aria-label="Link til vår instagramside"><i class="fa-brands fa-instagram fa-lg"></i></a></li><!-- UU tiltak gjort, basert på wave.webaim.org sin analyse (aria-label)-->
+                    <li><a href="https://www.facebook.com/" target="_blank" aria-label="Link til vår facebookside"><i class="fa-brands fa-facebook fa-lg"></i></a></li><!-- UU tiltak gjort, basert på wave.webaim.org sin analyse (aria-label)-->
+                    <li><a href="https://no.linkedin.com/" target="_blank" aria-label="Link til vår linkedinside"><i class="fa-brands fa-linkedin fa-lg"></i></a></li><!-- UU tiltak gjort, basert på wave.webaim.org sin analyse (aria-label)-->
+                    <li><a href="https://no.pinterest.com/" target="_blank" aria-label="Link til vår pinterestside"><i class="fa-brands fa-pinterest fa-lg"></i></a></li><!-- UU tiltak gjort, basert på wave.webaim.org sin analyse (aria-label)-->
+                </ul>
+            </section>
+        </footer>
+    </div>
+</body>
+</html>
