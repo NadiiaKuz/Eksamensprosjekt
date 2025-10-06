@@ -1,7 +1,7 @@
-package model;
+package main.java.model;
 
-import enums.Role;
-import enums.UserType;
+import main.java.enums.Role;
+import main.java.enums.UserType;
 
 import java.util.ArrayList;
 

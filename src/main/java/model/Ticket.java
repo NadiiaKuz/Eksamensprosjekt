@@ -1,6 +1,6 @@
-package model;
+package main.java.model;
 
-import enums.TicketType;
+import main.java.enums.TicketType;
 
 import java.time.LocalDate;
 

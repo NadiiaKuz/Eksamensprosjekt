@@ -1,6 +1,6 @@
-package model;
+package main.java.model;
 
-import enums.TransportType;
+import main.java.enums.TransportType;
 
 public class Vehicle {
     private int transportId;
