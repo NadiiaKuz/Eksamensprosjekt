@@ -22,7 +22,6 @@ public class GraphQLQuery {
     }
 
     public String getQuery(int fromStop, int toStop) {
-        //Define the GraphQL query
         String graphQLQuery = String.format("""
                   {
                   trip(

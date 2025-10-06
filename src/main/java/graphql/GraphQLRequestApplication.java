@@ -11,17 +11,10 @@ public class GraphQLRequestApplication {
         GraphQLClient client = new GraphQLClient();
         GraphQLQuery query = new GraphQLQuery();
 
-        // Testing responses
+        // Lager automatiserte forespørsler senere når vi får brukerinput fra nettsiden
+        // Lager klasse for å oversette navn på busstopper til ID senere
 
-        // Stop ID 2306: Fredrikstad bussterminal
-        // Stop Id 2534: Remmen, Halden
-
-        //String response = client.sendGraphQLRequest(query.getQuery(2306, 2534));
-
-        //String response = client.sendGraphQLRequest(query.getQuery(2306,2534, "2025-10-02T13:22:56.428+02:00", "bus"));
-
-        //OffsetDateTime currentTime = OffsetDateTime.now();
-        //String response = client.sendGraphQLRequest(query.getQuery(2306, 2534, currentTime,"bus"));
+        // Eksempel query
 
         OffsetDateTime customTime = OffsetDateTime.parse("2025-10-02T16:00:00.218+02:00");
         ArrayList<String> transportModes = new ArrayList<>();
